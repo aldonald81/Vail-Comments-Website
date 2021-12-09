@@ -1,0 +1,29 @@
+# Query to get a specific user based on their inputted name
+USE commonsschema;
+SELECT * FROM users WHERE fName = 'Alexander' AND lname = 'Donald';
+# If they aren't in database add them
+INSERT INTO Users (fName, lName, classYear) VALUES('Alexander', 'Donald', 2023);
+
+
+# Query to adjust the score based on an up or down vote
+UPDATE meals
+SET
+	score = score + 1
+WHERE
+	mealName = 'Chicken Parm' AND mealDate = '2021-11-19';
+
+SELECT * FROM meals
+
+
+# Query to show the top scores for each category
+SELECT * FROM meals
+WHERE mealType = 'main'
+ORDER BY score desc;
+
+
+#Getting a specific user's favorite Meals
+SELECT email, favorites.mealId, mealName, mealType, mealDate FROM ((SELECT * FROM favoritemeals
+WHERE email = 'aldonald@davidson.edu') AS favorites
+LEFT JOIN
+(SELECT * FROM meals) AS meals
+ON favorites.mealId = meals.mealId )

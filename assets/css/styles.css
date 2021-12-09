@@ -1,2 +1,128 @@
 
 /* css */
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.navbar {
+  padding-left: 20px;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
+.nav-link {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.nav {
+  color: black;
+}
+
+
+
+.nav-tabs > li.active > a {
+  color: #3c5a78;
+  font-size: 16px;
+  background-color: white;
+}
+.nav-tabs > li > a {
+  color: #575757;
+  font-size: 16px;
+}
+
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black
+}
+
+.row {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.vote-row {
+  background-color: white;
+  color: black;
+  margin: 15px;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  align-self: center;
+  text-align:center;
+  border: 2px solid blue;
+  outline-style: solid;
+  margin: auto;
+}
+
+th {
+  border: 1px solid white;
+  padding: 10px;
+  background-color: #001f4d;
+  font-size: 25px;
+}
+tr {
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 25px;
+}
+tr:nth-child(even) {
+  background-color: DimGrey;
+}
+
+td{
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.vote-header {
+  text-align: left;
+  font-size: 40px
+}
+
+.vote-food-title {
+  text-align: left;
+  margin-left: 15px;
+  font-size: 30px;
+}
+
+.comment-vote {
+  margin-left: 25px;
+  font-weight: bold;
+  font-size: 15px
+}
+
+.scoresPiece {
+  line-height: 20px;
+  font-size: 25px;
+}
+
+
+/* LogIn styles */
+
+.bg-image-vertical {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%;
+}
+
+@media (min-width: 1025px) {
+  .h-custom-2 {
+    height: 100%;
+  }
+}

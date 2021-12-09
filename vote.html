@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Vote</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Vail Commonts</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Vote</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="analytics.html">Analytics</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-11">
+        <h1 class="vote-header">Today's Menu Items</h1>
+      </div>
+    </div>
+    <div class="row vote-row">
+      <div class="col-1"></div>
+      <div class="col-1">
+        <!-- How to best make this reproducable --->
+        <h2><a id="up-1">▲</a></h2>
+        <h2 id="score-row1">121</h2>
+        <h2><a id="down-1">▼</a></h2>
+      </div>
+      <div class="col-9">
+        <h1 class="vote-food-title">Scoopie</h1>
+        <p class="comment-vote">Comments</p>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <div class="row vote-row">
+      <div class="col-1"></div>
+      <div class="col-1">
+        <!-- How to best make this reproducable --->
+        <h2><a id="up-2">▲</a></h2>
+        <h2 id="score-row2">90</h2>
+        <h2><a id="down-2">▼</a></h2>
+      </div>
+      <div class="col-9">
+        <h1 class="vote-food-title">Ice Cream</h1>
+        <p class="comment-vote">Comments</p>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <div class="row vote-row">
+      <div class="col-1"></div>
+      <div class="col-1">
+        <!-- How to best make this reproducable --->
+        <h2><a id="up-3">▲</a></h2>
+        <h2 id="score-row3">30</h2>
+        <h2><a id="down-3">▼</a></h2>
+      </div>
+      <div class="col-9">
+        <h1 class="vote-food-title">Chicken Parm</h1>
+        <p class="comment-vote">Comments</p>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <div class="row vote-row">
+      <div class="col-1"></div>
+      <div class="col-1">
+        <!-- How to best make this reproducable --->
+        <h2><a id="up-4">▲</a></h2>
+        <h2 id="score-row4">-22</h2>
+        <h2><a id="down-4">▼</a></h2>
+      </div>
+      <div class="col-9">
+        <h1 class="vote-food-title">Pasta Bar</h1>
+        <p class="comment-vote">Comments</p>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </div>
+
+
+  </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <script>
+      //HOST mysql server on DAVIDSON DOMAINS???
+      //WILL need to get data from CSV first then eventually transition to querying a database
+      // Ask mundy about best way to read data in
+      //Can you create HTML from strings in JS like PHP
+      //Data is currently an array of objects with attributes holding values for different things such as menu item, score, and comments
+      data = [{'menuItem': 'Scoopie', 'score': 121, 'comments': null}, {'menuItem': 'Ice Cream', 'score': 90, 'comments': null}, {'menuItem': 'Chicken Parm', 'score': 30, 'comments': null}, {'menuItem': 'Pasta Bar', 'score': -22, 'comments': null}]
+
+      for(let i=0; i < data.length; i++){
+        //Row parent element
+        var row = document.createElement("div")
+        row.class = "row vote-row"
+
+        //Column 1
+
+        console.log(data[i]['menuItem'])
+      }
+
+      /* Create each row in for loop and set row as the child of container???
+      <div class="row vote-row">
+        <div class="col-1"></div>
+        <div class="col-1">
+          <!-- How to best make this reproducable --->
+          <h2><a id="up-1">▲</a></h2>
+          <h2 id="score-row1">121</h2>
+          <h2><a id="down-1">▼</a></h2>
+        </div>
+        <div class="col-9">
+          <h1 class="vote-food-title">Scoopie</h1>
+          <p class="comment-vote">Comments</p>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      */
+
+
+      // Creating the rows automatically and filling them with the information from the csv
+      //Event listeners for clicks on arrows
+      var up1 = document.getElementById("up-1")
+      up1.addEventListener('click', adjustScore.bind(event, 'row1', 1), false) //Don't have great understanding the bind - Know that its adding parameters that I need for function
+
+      var down1 = document.getElementById("down-1")
+      down1.addEventListener('click', adjustScore.bind(event, 'row1', -1), false)
+
+      var up2 = document.getElementById("up-2")
+      up2.addEventListener('click', adjustScore.bind(event, 'row2', 1), false) //Don't have great understanding the bind - Know that its adding parameters that I need for function
+
+      var down2 = document.getElementById("down-2")
+      down2.addEventListener('click', adjustScore.bind(event, 'row2', -1), false)
+
+      var up3 = document.getElementById("up-3")
+      up3.addEventListener('click', adjustScore.bind(event, 'row3', 1), false) //Don't have great understanding the bind - Know that its adding parameters that I need for function
+
+      var down3 = document.getElementById("down-3")
+      down3.addEventListener('click', adjustScore.bind(event, 'row3', -1), false)
+
+      var up4 = document.getElementById("up-4")
+      up4.addEventListener('click', adjustScore.bind(event, 'row4', 1), false) //Don't have great understanding the bind - Know that its adding parameters that I need for function
+
+      var down4 = document.getElementById("down-4")
+      down4.addEventListener('click', adjustScore.bind(event, 'row4', -1), false)
+
+      function adjustScore(row, amount){
+        valueId = "score-" + row;
+        console.log(valueId)
+
+        score = document.getElementById(valueId);
+
+        newScore = Number(score.innerText) + amount
+
+        score.innerText = String(newScore)
+      }
+
+      //href="#" onclick="javascript:adjustScore('row1', -1)
+
+      //adjustScore("row1", 1)
+
+
+  </script>
+</body>
+</html>
