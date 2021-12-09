@@ -1,6 +1,5 @@
 
 
-./inc/dbConnection.php
 # Windows
 Thumbs.db
 desktop.ini
@@ -10,3 +9,4 @@ desktop.ini
 .Spotlight-V100
 .Trashes
 ._*
+inc/dbConnection.php

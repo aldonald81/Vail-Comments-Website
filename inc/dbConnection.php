@@ -1,5 +1,5 @@
 <?php
-  error_reporting(E_ALL ^ E_WARNING);
+  error_reporting(E_ALL ^ E_WARNING); //
   $servername = '127.0.0.1'; // Do not use 'localhost'
 
   // In the Real World (TM), you should not connect using the root account.
