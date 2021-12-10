@@ -1,19 +1,4 @@
-<!doctype html>
-<html lang='en'>
-<head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-
-    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
-    <link rel='stylesheet' href='assets/css/styles.css'>
-
-    <title>Handler</title>
-
-
-</head>
-
-<body>
-  <?php
+<?php
     require("./inc/dbConnection.php");
 
     // CHeck to make sure user is present, alert them to create an account first
@@ -47,6 +32,7 @@
 
     //ELSE SEND USER TO THE VOTE PAGE -- INlUDE THEIR INFO IN POST ???
     else{
+        session_start();
       echo"
       <script language='Javascript'>
         //Ask user to accept cookies - store their email
@@ -103,7 +89,6 @@
         }
       </script>
         ";
-      //session_start();
       //$_SESSION['email']     = $email;
       //header('Location: index.html');
       //die(); //HOW TO SEND THE CURRENT USERS EMAIL TO THE NEXT PAGE !!!!!!!!!!!!!!!!!!!
@@ -116,7 +101,3 @@
 
 
   ?>
-
-
-</body>
-</html>

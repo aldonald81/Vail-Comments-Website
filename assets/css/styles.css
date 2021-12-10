@@ -4,6 +4,8 @@
 body {
   background-color: black;
   color: white;
+  font-family: 'Roboto Slab', 'Georgia', serif;
+  
 }
 
 .navbar {
@@ -37,8 +39,69 @@ body {
 
 
 h1 {
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
+}
+h6{
+  font-size: 10px;
+}
+
+#about-section {
+  font-size: 14px
+}
+
+.vote-food-title {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+
+.comment-vote {
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 10px
+}
+
+.scoresPiece {
+  line-height: 15px;
+  font-size: 25px;
+}
+
+
+/* sizes: m */
+@media (min-width: 768px) {
+ h1 {font-size: 40px;}
+ #about-section {
+   font-size: 18px
+ }
+ h6{font-size:12px}
+ .vote-food-title{
+     margin-left: 15px;
+    font-size: 35px;
+    }
+    
+  .comment-vote{
+    margin-left: 25px;
+    font-size: 15px;
+  }
+  .scoresPiece{
+    line-height: 20px;
+    font-size: 35px;
+  }
+}
+/* sizes: l, xl */
+@media (min-width: 992px) {
+ h1 { font-size: 50px;}
+ #about-section {
+   font-size: 23px
+ }
+ h6{font-size:15px}
+}
+
+@media (min-width: 2560px) {
+  #about-section {font-size: 35px}
+  h1 { font-size: 60px;}
 }
 
 a {
@@ -64,20 +127,20 @@ table {
   align-self: center;
   text-align:center;
   border: 2px solid blue;
-  outline-style: solid;
   margin: auto;
+  width: 325px;
 }
 
 th {
   border: 1px solid white;
   padding: 10px;
   background-color: #001f4d;
-  font-size: 25px;
+  font-size: 20px;
 }
 tr {
   border: 1px solid white;
   padding: 10px;
-  font-size: 25px;
+  font-size: 20px;
 }
 tr:nth-child(even) {
   background-color: DimGrey;
@@ -91,23 +154,6 @@ td{
 .vote-header {
   text-align: left;
   font-size: 40px
-}
-
-.vote-food-title {
-  text-align: left;
-  margin-left: 15px;
-  font-size: 30px;
-}
-
-.comment-vote {
-  margin-left: 25px;
-  font-weight: bold;
-  font-size: 15px
-}
-
-.scoresPiece {
-  line-height: 20px;
-  font-size: 25px;
 }
 
 
@@ -125,4 +171,16 @@ td{
   .h-custom-2 {
     height: 100%;
   }
+}
+
+.table-div {
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-header {
+  font-size: 35px;
+  margin-bottom: 12px;
+  margin-top: 20px
 }

@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    
     <link rel='stylesheet' href='assets/css/styles.css'>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
 
     <title>Analytics</title>
 </head>
@@ -30,7 +35,7 @@
     <div class='collapse navbar-collapse' id='navbarNav'>
       <ul class='navbar-nav'>
         <li class='nav-item'>
-          <a class='nav-link' href='index.html'>Home</a>
+          <a class='nav-link' href='index.html'>About</a>
         </li>
         <li class='nav-item'>
           <a class='nav-link' href='vote.php'>Vote</a>
@@ -79,9 +84,9 @@
 
   <div class='tab-content'>
     <div id='summaryData' class='tab-pane fade in active'>
-      <div class='row'>
-          <div class='col-4'>
-            <h1>Top Entrees</h1>
+      <div class='row' style='display: flex; flex-wrap:wrap;'>
+          <div class='table-div'>
+            <h1 class='table-header'>Top Entrees</h1>
             <table>
               <thead>
                 <tr>
@@ -107,8 +112,8 @@
             </table>
           </div>
 
-          <div class='col-4'>
-            <h1>Top Sides</h1>
+          <div class='table-div'>
+            <h1 class='table-header'>Top Sides</h1>
             <table>
               <thead>
                 <tr>
@@ -135,8 +140,8 @@
             </table>
           </div>
 
-          <div class='col-4'>
-            <h1>Top Desserts</h1>
+          <div class='table-div'>
+            <h1 class='table-header'>Top Desserts</h1>
             <table>
               <thead>
                 <tr>
@@ -180,13 +185,13 @@
       echo "
         <div class='row'>
             <div class='col-12'>
-              <h1>Your Favorite Foods</h1>
-              <table>
+              <h1 class='table-header'>Your Favorite Foods</h1>
+              <table style='width:425px'>
                 <thead>
                   <tr>
                     <th>Food Name</th>
                     <th>Food Type</th>
-                    <th>Date Liked</th>
+                    <th>Meal Date</th>
                   </tr>
                 </thead>
                 <tbody>
