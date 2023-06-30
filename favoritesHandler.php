@@ -14,20 +14,21 @@
 
     parse_str($url_components['query'], $params);
 
-    $mealId = $params['mealid'];
+    $mealName = $params['mealName'];
+
     $action = $params['action'];
 
     $userEmail = $_COOKIE['email'];
 
     if($action == 'add'){
         $insert_favorite =
-        "INSERT INTO FavoriteMeals VALUES('$userEmail', $mealId);";
+        "INSERT INTO FavoriteMeals VALUES('$userEmail', '$mealName', true);";
 
         $result = mysqli_query($conn, $insert_favorite);
     }
     else{
       $remove_favorite =
-      "DELETE FROM FavoriteMeals WHERE email = '$userEmail' AND mealId = $mealId;";
+      "DELETE FROM FavoriteMeals WHERE email = '$userEmail' AND mealName = '$mealName';";
 
       $result = mysqli_query($conn, $remove_favorite);
     }

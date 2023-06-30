@@ -3,6 +3,13 @@
 
     // CHeck to make sure user is present, alert them to create an account first
     $email = $_POST["email"];
+    $code = $_POST["code"];
+
+    //Should I check to see if code is correct here?? Or is there some way to check on submit on login page???
+    $db_code_query = "SELECT code FROM Users WHERE email = '$email'";
+    $result = mysqli_query($conn, $db_code_query);
+    $db_code = mysqli_fetch_array($result)[0];
+    //$db_code = 'asdf';
 
 
     $check_user =
@@ -13,7 +20,7 @@
     //if count != 0 log the user in, else take them back to login page and alert them
     $count = $row = mysqli_fetch_array($result)[0];
 
-    //THIS ISN"T WORKING ON CREATE ACCOUNT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+    // Case when the email entered is not associated with an account
     if($count == 0){
       echo"
       <script language='Javascript'>
@@ -30,9 +37,15 @@
       //die();
     }
 
-    //ELSE SEND USER TO THE VOTE PAGE -- INlUDE THEIR INFO IN POST ???
-    else{
-        session_start();
+    //Case when email is IN database and code is correct
+    elseif ($code == $db_code) {
+      //Creating session variables that indicate that the user is logged in
+      session_start();
+      //Removing any previous session data
+      unset($_SESSION["account"]);
+      //Setting data for this user
+      $_SESSION["account"] = $email;
+      $_SESSION["success"] = "Logged in";
       echo"
       <script language='Javascript'>
         //Ask user to accept cookies - store their email
@@ -80,19 +93,32 @@
           if(answer){
             document.cookie = 'acceptedCookies=true'
             document.cookie = 'email=$email'
-            window.location.href='index.html'
+            window.location.href='vote.php'
           }
         }
         else{
           document.cookie = 'email=$email'
-          window.location.href='index.html'
+          window.location.href='vote.php'
         }
       </script>
         ";
       //$_SESSION['email']     = $email;
       //header('Location: index.html');
       //die(); //HOW TO SEND THE CURRENT USERS EMAIL TO THE NEXT PAGE !!!!!!!!!!!!!!!!!!!
-    };
+    }
+
+    //Case when code is wrong but email is in db
+    elseif ($code != $db_code){
+      echo"
+      <script language='Javascript'>
+      confirm = confirm('Your code is incorrect. Please retry')
+      if (confirm == true) {
+        window.location.href='logIn.html';
+      }
+      </script>
+      ";
+      //Could change so that it redirects after a certain period of time and display a different message
+    }
 
     //header("Location: logIn.html");
     //die();

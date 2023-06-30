@@ -26,44 +26,44 @@
           <!-- Form adapted from https://mdbootstrap.com/docs/standard/extended/login/ #5 -->
           <form style="width: 23rem;" action="createAccountHandler.php" method="POST">
 
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Create Account</h3>
+            <h3 class="fw-normal mb-2 pb-2" style="letter-spacing: 1px;">Create Account</h3>
 
             <div class="form-outline mb-4">
               <label class="form-label" for="firstName">First Name</label>
-              <input required type="text" id="firstName" name="firstName" class="form-control form-control-lg" />
+              <input required type="text" id="firstName" name="firstName" class="form-control form-control-md" />
 
             </div>
 
             <div class="form-outline mb-4">
               <label class="form-label" for="lastName">Last Name</label>
-              <input required type="text" id="lastName" name="lastName" class="form-control form-control-lg" />
+              <input required type="text" id="lastName" name="lastName" class="form-control form-control-md" />
 
             </div>
 
             <div class="form-outline mb-4">
-              <label class="form-label" for="classYear">Class Year</label>
-              <input required type="text" id="classYear" name="classYear" class="form-control form-control-lg" />
+              <label class="form-label" for="code">Secret Code (use only numbers)</label>
+              <input required type="text" id="code" name="code" class="form-control form-control-md" />
 
             </div>
 
             <div class="form-outline mb-4">
               <label class="form-label" for="form2Example18">Email address</label>
-              <input required type="email" id="email" name="email" class="form-control form-control-lg" />
+              <input required type="email" id="email" name="email" class="form-control form-control-md" />
 
             </div>
 
             <div class="pt-1 mb-4">
-              <input class="btn btn-info btn-lg btn-block" type="submit" value="Submit">
+              <input class="btn btn-info btn-lg btn-block" style="color: black; background-color: #b1a7a6; border: none" type="submit" value="Submit">
             </div>
 
             <!-- On submit add student data to database and then return the user to the login page -->
-
+            <a href="logIn.html" class="link-info">Return to Log In</a>
           </form>
         </div>
 
         <div class="col-lg-6 col-12 col-sm-12">
           <!-- We want YOU picture of edwin pointing at the camera!!! -->
-          <img src="./assets/img/mons.jpg" alt="Commons Picture" style="width: 600px; height: 400px; margin-top: 15%">
+          <img src="./assets/img/mons.jpg" alt="Commons Picture" class="commonsPicture">
         </div>
 
       </div>

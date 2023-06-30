@@ -9,13 +9,14 @@ CREATE TABLE Users
 	lName		VARCHAR(50),
 	classYear	INT,
 	email		VARCHAR(50),
+	code 		INT,
 	PRIMARY KEY (email)
 );
 
-INSERT INTO Users (fName, lName, classYear, email) VALUES('Alexander', 'Donald', 2023, 'aldonald@davidson.edu');
-INSERT INTO Users (fName, lName, classYear, email) VALUES('Evan', 'Pritchard', 2022, 'evpritch@davidson.edu');
-INSERT INTO Users (fName, lName, classYear, email) VALUES('Caden', 'Bonofski', 2023, 'cabono@davidson.edu');
-INSERT INTO Users (fName, lName, classYear, email) VALUES('Cole', 'Foley', 2022, 'cofoley@davidson.edu');
+-- INSERT INTO Users (fName, lName, classYear, email) VALUES('Alexander', 'Donald', 2023, 'aldonald@davidson.edu');
+-- INSERT INTO Users (fName, lName, classYear, email) VALUES('Evan', 'Pritchard', 2022, 'evpritch@davidson.edu');
+-- INSERT INTO Users (fName, lName, classYear, email) VALUES('Caden', 'Bonofski', 2023, 'cabono@davidson.edu');
+-- INSERT INTO Users (fName, lName, classYear, email) VALUES('Cole', 'Foley', 2022, 'cofoley@davidson.edu');
 
 
 CREATE TABLE Meals
@@ -42,19 +43,25 @@ INSERT INTO Meals (mealName, mealType, mealPeriod, station, score, mealDate) VAL
 INSERT INTO Meals (mealName, mealType, mealPeriod, station, score, mealDate) VALUES('Scoopie', 'dessert', 'dinner', 'dessert', 122, '2021-11-19');
 INSERT INTO Meals (mealName, mealType, mealPeriod, station, score, mealDate) VALUES('Ice Cream', 'dessert', 'lunch', 'dessert', 21, '2021-11-19');
 
-
 CREATE TABLE FavoriteMeals
 (
 	email 		VARCHAR(50),
-	mealId		INT,
+	mealName	VARCHAR(50),
+	alert		BOOLEAN,
 	# OR mealName???? Only want to include each meal once meaning unique
-	FOREIGN KEY (email) REFERENCES Users(email),
-	FOREIGN KEY (mealId) REFERENCES Meals(mealId)
-	
+	FOREIGN KEY (email) REFERENCES Users(email)
 );
 
-INSERT INTO FavoriteMeals VALUES('aldonald@davidson.edu', 1);
-INSERT INTO FavoriteMeals VALUES('aldonald@davidson.edu', 3);
-INSERT INTO FavoriteMeals VALUES('evpritch@davidson.edu', 1);
-INSERT INTO FavoriteMeals VALUES('cofoley@davidson.edu', 2);
+CREATE TABLE Comments 
+(
+	email 		VARCHAR(50),
+	comment		VARCHAR(2000),
+	commentDate DATE,
+	FOREIGN KEY(email) REFERENCES Users(email)
+);
+
+-- INSERT INTO FavoriteMeals VALUES('aldonald@davidson.edu', 1);
+-- INSERT INTO FavoriteMeals VALUES('aldonald@davidson.edu', 3);
+-- INSERT INTO FavoriteMeals VALUES('evpritch@davidson.edu', 1);
+-- INSERT INTO FavoriteMeals VALUES('cofoley@davidson.edu', 2);
 

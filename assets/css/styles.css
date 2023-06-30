@@ -25,17 +25,50 @@ body {
   color: black;
 }
 
+a {
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+a:focus{
+  text-decoration: none;
+}
 
-
-.nav-tabs > li.active > a {
+.nav-tabs > li.active > .favorites {
   color: #3c5a78;
   font-size: 16px;
   background-color: white;
 }
-.nav-tabs > li > a {
+.nav-tabs > li > .favorites {
   color: #575757;
   font-size: 16px;
 }
+
+/*Focus and Hover properties are key!!*/
+.nav-tabs > li.active > .meal-time, .nav-tabs > li.active > .meal-time:focus, .nav-tabs > li.active > .meal-time:hover {
+  color: white;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid white;
+}
+
+.nav-tabs > li > .meal-time {
+  background-color: transparent;
+  color: #575757;
+  font-size: 16px;
+  border: none
+}
+
+.nav-tabs > li > .meal-time:hover {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+
+
 
 
 h1 {
@@ -52,8 +85,8 @@ h6{
 
 .vote-food-title {
   text-align: left;
-  margin-left: 20px;
-  font-size: 25px;
+  margin-left: 10px;
+  font-size: 15px;
 }
 
 
@@ -64,10 +97,45 @@ h6{
 }
 
 .scoresPiece {
-  line-height: 15px;
-  font-size: 25px;
+  margin:0;
+  line-height: 90%;
+  font-size: 20px;
+  text-align: center;
+  color: black
 }
 
+.scoresPiece > a {
+  color: black
+}
+
+.commonsPicture {
+  width: 300px; height: 150px; margin-top: 15%
+}
+
+.form-control {
+  width: 300px;
+}
+
+.favoritesTable{
+  width: 80%;
+}
+
+td {
+  font-size: 15px
+}
+.favoritesTable th {
+  font-size: 15px
+}
+
+/*Remove padding and margin for row when very small for vote rows*/
+.vote-row {
+  background-color: white;
+  color: black;
+  margin: 5px;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+}
 
 /* sizes: m */
 @media (min-width: 768px) {
@@ -78,7 +146,7 @@ h6{
  h6{font-size:12px}
  .vote-food-title{
      margin-left: 15px;
-    font-size: 35px;
+    font-size: 30px;
     }
     
   .comment-vote{
@@ -86,9 +154,29 @@ h6{
     font-size: 15px;
   }
   .scoresPiece{
-    line-height: 20px;
-    font-size: 35px;
+    
+    font-size: 30px;
+    text-align: center
   }
+  .commonsPicture {
+    width: 600px; height: 400px; margin-top: 15%
+  }
+  .form-control {
+    width: 350px;
+  }
+  .favoritesTable{
+    width: 550px;
+  }
+  td {
+    font-size: 20px
+  }
+  .favoritesTable th {
+    font-size: 20px
+  }
+  .vote-row {
+    margin: 15px;
+  }
+  
 }
 /* sizes: l, xl */
 @media (min-width: 992px) {
@@ -104,29 +192,16 @@ h6{
   h1 { font-size: 60px;}
 }
 
-a {
-  text-decoration: none;
-  color: black
-}
-
 .row {
   padding: 10px;
   vertical-align: middle;
 }
 
-.vote-row {
-  background-color: white;
-  color: black;
-  margin: 15px;
-  border-radius: 15px;
-  justify-content: center;
-  align-items: center;
-}
-
+/* black color palette - https://www.color-hex.com/color-palette/45492 */
 table {
   align-self: center;
   text-align:center;
-  border: 2px solid blue;
+  border: 2px solid white;
   margin: auto;
   width: 325px;
 }
@@ -134,16 +209,17 @@ table {
 th {
   border: 1px solid white;
   padding: 10px;
-  background-color: #001f4d;
+  background-color: #111111;
   font-size: 20px;
 }
 tr {
   border: 1px solid white;
   padding: 10px;
   font-size: 20px;
+  background-color: #1e1e1e;
 }
 tr:nth-child(even) {
-  background-color: DimGrey;
+  background-color: #4d4d4d;
 }
 
 td{
